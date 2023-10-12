@@ -1,0 +1,75 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.user-info-container {
+  margin-left: auto;
+  margin-right: 20px; /* Adjust the margin as needed */
+  
+}
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .logout-button {
+    cursor: pointer;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+
+  .section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 200px; /* Minimum width for each section */
+  }
+  .deals {
+    background-color: #f5f5f5;
+  }
+  
+  .tasks {
+    background-color: #e0f7fa;
+  }
+  
+  .user-management {
+    background-color: #f3e5f5;
+  }
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+input[type="checkbox"] {
+  margin-top: 3px;
+}
+.container {
+  margin-top: 20px;
+}
+
+

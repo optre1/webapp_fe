@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useEffect, useRef } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Dashboard from './dashboard/Dashboard';
+import Login from './auth/Login';
+import TokenLogin from './auth/TokenLogin';
+import TaskForm from './tasks/TaskForm';
+import DealsForm from './deals/DealsForm';
+import UserForm from './users/UserForm';
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<TokenLogin />} />
+         <Route path="/dashboard" element={<Dashboard />} /> 
+         <Route path="/tasks/create" element= {<TaskForm/>}></Route>
+         <Route path="/deals/create" element= {<DealsForm/>}></Route>
+         <Route path="/users/create" element= {<UserForm/>}></Route>
+        </Routes>
+      </BrowserRouter>
+      
     </div>
   );
-}
+};
 
 export default App;

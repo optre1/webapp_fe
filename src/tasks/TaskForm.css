@@ -1,0 +1,93 @@
+/* Add this CSS to your stylesheets */
+.task-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  
+  .task-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task-form div {
+    margin-bottom: 15px;
+  }
+  
+  .task-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .task-form input[type="text"],
+  .task-form textarea,
+  .task-form .react-datepicker-wrapper {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .task-form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .task-form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style for the date picker */
+  .react-datepicker {
+    font-size: 14px;
+  }
+  
+  .react-datepicker__header {
+    background-color: #4caf50;
+    color: white;
+    padding-top: 10px;
+  }
+  
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .react-datepicker__day:hover {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .react-datepicker__current-month {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  select{
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
