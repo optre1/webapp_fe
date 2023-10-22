@@ -64,9 +64,11 @@ const UserForm = () => {
                     <input type='checkbox' name='isAdmin' value={userData.isAdmin} onChange={handleChange}/>
                 </div>
                 <button type='submit'>Create User</button>
+                {responseMessage && <div className='error-message'>{responseMessage}</div>}
+                <button onClick={handleBack}>Back</button>
             </form>
-            {responseMessage && <div className='error-message'>{responseMessage}</div>}
-            <button onClick={handleBack}>Back</button>
+           
+           
         </div>
     );
 };

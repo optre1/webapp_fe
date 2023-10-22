@@ -90,7 +90,7 @@ const TaskForm = () => {
    
   };
   const handleBack = (e) => {
-    navigate('/dashboard?tasks')
+    navigate('/dashboard')
   }
 
   return (

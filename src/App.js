@@ -11,15 +11,15 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<TokenLogin />} />
-         <Route path="/dashboard" element={<Dashboard />} /> 
-         <Route path="/tasks/create" element= {<TaskForm/>}></Route>
-         <Route path="/deals/create" element= {<DealsForm/>}></Route>
-         <Route path="/users/create" element= {<UserForm/>}></Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<TokenLogin />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/tasks/create" element={<TaskForm />}></Route>
+          <Route path="/deals/create" element={<DealsForm />}></Route>
+          <Route path="/users/create" element={<UserForm />}></Route>
         </Routes>
       </BrowserRouter>
-      
+
     </div>
   );
 };

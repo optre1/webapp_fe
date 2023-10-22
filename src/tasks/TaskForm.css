@@ -29,8 +29,7 @@
   }
   
   .task-form input[type="text"],
-  .task-form textarea,
-  .task-form .react-datepicker-wrapper {
+  .task-form textarea {
     width: 100%;
     padding: 8px;
     font-size: 14px;
@@ -56,32 +55,6 @@
   /* Style for the date picker */
   .react-datepicker {
     font-size: 14px;
-  }
-  
-  .react-datepicker__header {
-    background-color: #4caf50;
-    color: white;
-    padding-top: 10px;
-  }
-  
-  .react-datepicker__day-name,
-  .react-datepicker__day {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    margin: 2px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .react-datepicker__day:hover {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .react-datepicker__current-month {
-    font-size: 16px;
-    margin-bottom: 10px;
   }
   select{
     width: 100%;

@@ -16,7 +16,14 @@ const DealsForm = () => {
   const [responseMessage, setResponseMessage] = useState('')
   const handleChange = (e) => {
     const {name, value} = e.target;
-    setDealData({...dealData, [name]: value});
+    if (name === 'value') {
+      // Check if the input is a valid number and update the state accordingly
+      if (/^[1-9]\d*$/.test(value)) {
+        setDealData({ ...dealData, [name]: value });
+      }
+    } else {
+      setDealData({ ...dealData, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {
