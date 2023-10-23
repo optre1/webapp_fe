@@ -12,20 +12,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Dashboard = () => {
   const [username, setUsername] = useState('');
-  const [uid, setUid] = useState('')
+  const [uid, setUid] = useState('')                  //unused
   const [isAdmin, setIsAdmin] = useState(false)
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('deals');
   useEffect(() => {
-    
-   fetch('/api/dashboard')
+
+    fetch('/api/dashboard')
       .then(response => response.json())
       .then(data => {
-        if(data.success !=null && data.success === true) {
-         //fetch more data
-        setUsername(data.message.userName)
-        setIsAdmin(data.message.isAdmin)
-        setUid(data.message._id.toString())
+        if (data.success != null && data.success === true) {
+          setUsername(data.message.userName)
+          setIsAdmin(data.message.isAdmin)
+          setUid(data.message._id.toString())
         } else {
           navigate('/login')
           return
@@ -37,7 +36,7 @@ const Dashboard = () => {
         return
       });
   }, [navigate]);
-  
+
   const handleLogout = () => {
     fetch('/api/auth/logout')
       .then(response => response.json())
@@ -50,10 +49,9 @@ const Dashboard = () => {
     navigate('/');
   };
 
-
   return (
     <div className="dashboard">
-   <div className="user-info-container ml-auto">
+      <div className="user-info-container ml-auto">
         {username && (
           <Dropdown>
             <Dropdown.Toggle variant="light" id="dropdown-basic">
@@ -67,29 +65,26 @@ const Dashboard = () => {
         )}
       </div >
       <div className="container">
-      <Tabs
-        id="dashboard-tabs"
-        activeKey={activeTab}
-        onSelect={(key) => setActiveTab(key)}
-      >
-        <Tab eventKey="deals" title="Deals Section">
-          <DealsTable/>
-        </Tab>
-        <Tab eventKey="tasks" title="Tasks Section">
-          <TasksTable/> 
-        </Tab>
-        {isAdmin && (
-          <Tab eventKey="userManagement" title="User Management Section">
-            <UsersTable/>
+        <Tabs
+          id="dashboard-tabs"
+          activeKey={activeTab}
+          onSelect={(key) => setActiveTab(key)}
+        >
+          <Tab eventKey="deals" title="Deals Section">
+            <DealsTable />
           </Tab>
-        )}
-      </Tabs>
+          <Tab eventKey="tasks" title="Tasks Section">
+            <TasksTable />
+          </Tab>
+          {isAdmin && (
+            <Tab eventKey="userManagement" title="User Management Section">
+              <UsersTable />
+            </Tab>
+          )}
+        </Tabs>
       </div>
     </div>
   );
-
- 
 };
-  
 
 export default Dashboard;

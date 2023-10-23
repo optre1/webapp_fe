@@ -49,10 +49,7 @@ fetch('/api/tasks/get')
     updatedSelectedTasks = selectedTasks ? [...selectedTasks, id] : [id];
   }
 
-  // Update the selectedTasks state
   setSelectedTasks(updatedSelectedTasks);
-
-  // Enable or disable the delete button based on the length of selectedTasks
   setIsDeleteButtonEnabled(updatedSelectedTasks.length > 0);
 };
   const handleAddTask = () => {
@@ -68,8 +65,7 @@ fetch('/api/tasks/get')
     })
       .then(response => response.json())
       .then(data => {
-        // Set the response message in state
-        console.log(data); // Handle the server response here
+        console.log(data); 
       })
       .catch(error => {
         console.error('Error:', error);

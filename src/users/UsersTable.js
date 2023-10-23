@@ -45,11 +45,7 @@ const UsersTable = () => {
             // If the task is not selected, add it to the selectedTasks array
             updatedSelectedUsers = selectedUsers ? [...selectedUsers, id] : [id];
         }
-
-        // Update the selectedTasks state
         setSelectedUsers(updatedSelectedUsers);
-
-        // Enable or disable the delete button based on the length of selectedTasks
         setIsDeleteButtonEnabled(updatedSelectedUsers.length > 0);
     }
     const handleAddUser = () => {

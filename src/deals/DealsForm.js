@@ -1,23 +1,23 @@
 import './DealsForm.css'
 
-import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const DealsForm = () => {
   const navigate = useNavigate();
-  const initialDealData  = {
+  const initialDealData = {
     name: '',
     value: '',
     status: 'open'
   };
   const [dealData, setDealData] = useState(initialDealData);
-  
+
 
   const [responseMessage, setResponseMessage] = useState('')
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     if (name === 'value') {
-      // Check if the input is a valid number and update the state accordingly
+      // Check if the input is a valid number
       if (/^[1-9]\d*$/.test(value)) {
         setDealData({ ...dealData, [name]: value });
       }
@@ -29,26 +29,24 @@ const DealsForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('New Deal Data:', dealData);
-    // Perform actions to save the task data (send to API, update state, etc.)
     fetch('/api/deals/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ dealData }),
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ dealData }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        setResponseMessage(data.success ? 'Success' : 'Failed');
+        console.log(data);
+        setDealData(initialDealData);
       })
-        .then(response => response.json())
-        .then(data => {
-          // Set the response message in state
-          setResponseMessage(data.success ? 'Success' : 'Failed');
-          console.log(data); // Handle the server response here
-          setDealData(initialDealData);
-        })
-        .catch(error => {
-            setResponseMessage( 'Failed');
-          console.error('Error:', error);
-        });
-   
+      .catch(error => {
+        setResponseMessage('Failed');
+        console.error('Error:', error);
+      });
+
   };
   const handleBack = (e) => {
     navigate('/dashboard')
@@ -58,7 +56,7 @@ const DealsForm = () => {
     <div className='task-form'>
       <h2>Create a New Deal</h2>
       <form onSubmit={handleSubmit}>
-      <div>
+        <div>
           <label>Name:</label>
           <input type='text' name='name' value={dealData.name} onChange={handleChange} required />
         </div>
@@ -70,9 +68,9 @@ const DealsForm = () => {
       </form>
       {responseMessage && <div className="error-message">{responseMessage}</div>}
       <form onSubmit={handleBack}>
-      <button type="submit" >Back</button>
+        <button type="submit" >Back</button>
       </form>
-    
+
     </div>
   );
 };

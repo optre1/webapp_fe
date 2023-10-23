@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './dashboard/Dashboard';
 import Login from './auth/Login';
